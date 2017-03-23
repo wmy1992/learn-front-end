@@ -1,0 +1,35 @@
+#container{
+	width:180px;
+	height:80px;
+	margin:30px auto;
+}
+
+#content{
+	width:160px;
+	height:20px;
+	margin:0 auto;
+	text-align: center;
+	color:red;
+}
+
+.btn-group{
+	width:160px;
+	height:20px;
+	margin:30px auto;
+	padding-left:30px;
+}
+
+.btn-group span{
+	display: block;
+	float: left;
+	width:40px;
+	height:30px;
+	background: #33f;
+	margin-right:20px;
+	border-radius: 2px;
+	color:#fff; 
+	font-family: "微软雅黑";
+	line-height: 30px;
+	text-align:center;
+	cursor: pointer;
+}
