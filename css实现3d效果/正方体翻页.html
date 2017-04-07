@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>正方体翻页3D效果</title>
+	<style type="text/css">
+		.container{
+			-webkit-perspective: 800px;
+			-webkit-perspective-origin:50% 50%;
+		}
+		.page-group{
+			width:200px;
+			height:200px;/*设置width为100px的话page2.。。会有高度？？？*/
+			margin:10px auto;
+			position:relative;
+			-webkit-transform-style:preserve-3d;
+		}
+		.page{
+			width:100px;
+			height:100px;
+			background:#000;
+			text-align:center;
+			color:#fff;
+			font-size:100px;
+			line-height: 100px;
+			position:absolute;
+			-webkit-transform-origin:bottom;
+			-webkit-transition:-webkit-transform 0.5s linear;
+		}
+		#page1{
+			
+		}
+		#page2,#page3,#page4,#page5,#page6{
+			-webkit-transform:rotateX(90deg);
+
+		}
+		.operation{
+			width:200px;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="page-group">
+			<div class="page" id="page1">1</div>
+			<div class="page" id="page2">2</div>
+			<div class="page" id="page3">3</div>
+			<div class="page" id="page4">4</div>
+			<div class="page" id="page5">5</div>
+			<div class="page" id="page6">6</div>
+		</div>
+	</div>
+	<div class="operation">
+		<button id="next">next</button>
+		<button id="prev">prev</button>
+	</div>
+
+	<script type="text/javascript">
+		var curIndex=1;
+		var next=document.getElementById("next");
+		var prev=document.getElementById("prev");
+		next.onclick=function(){
+			if(curIndex==6){
+				return;
+			}
+			var curElem=document.getElementById("page"+curIndex);
+			curIndex++;
+			var nextElem=document.getElementById("page"+curIndex);
+			curElem.style.webkitTransform="rotateX(-90deg)";
+			nextElem.style.webkitTransform="rotateX(0deg)";
+			
+		}
+		prev.onclick=function(){
+			if(curIndex==1){
+				return;
+			}
+			var curElem=document.getElementById("page"+curIndex);
+			curIndex--;
+			var prevElem=document.getElementById("page"+curIndex);
+			curElem.style.webkitTransform="rotateX(90deg)";
+			prevElem.style.webkitTransform="rotateX(0deg)";
+			
+		}
+	</script>
+</body>
+</html>

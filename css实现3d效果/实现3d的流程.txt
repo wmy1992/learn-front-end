@@ -1,0 +1,27 @@
+css 3D效果实现
+1. 为3d效果设置场景div即class stage
+  为场景设置perspective视角和中心
+  .stage{
+  	perspective:800px;
+  	perspective-origin:50% 50%
+  }
+2. 为具有3D效果的元素的父容器设置transform-style,也就是：
+	.container{
+		transform-style:preserve-3d;
+	}
+3. 为各元素设置3D效果。
+	.page{
+		transform-origin:bottom; /*改变元素原点位置*/
+		transform:rotateX(90deg);
+		transform:translateY(200px);
+	}
+<div class="stage">
+	<div class="container">
+		<div class="page" id="page1">1</div>
+		<div class="page" id="page2">2</div>
+		<div class="page" id="page3">3</div>
+		<div class="page" id="page4">4</div>
+		<div class="page" id="page5">5</div>
+		<div class="page" id="page6">6</div>
+	</div>
+</div>
